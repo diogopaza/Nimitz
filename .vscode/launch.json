@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch NimitzApplication",
+            "request": "launch",
+            "mainClass": "com.nimitz.NimitzApplication",
+            "projectName": "nimitz"
+        },
+        {
+            "type": "java",
+            "name": "Launch teste",
+            "request": "launch",
+            "mainClass": "com.nimitz.teste",
+            "projectName": "nimitz"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-NimitzApplication<nimitz>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.nimitz.nimitz.NimitzApplication",
+            "projectName": "nimitz",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
