@@ -23,12 +23,12 @@ public class StatusServicoModel {
     @GeneratedValue(strategy = GenerationType.AUTO )
     private UUID id;
     private String nomeEstado;
-    private String autorizacao4;
-    private String retornoAutorizacao4;
-    private String inutilizacao4;
-    private String consultaProtocolo4;
-    private String statusServico4;
+    private String autorizacao;
+    private String retornoAutorizacao;
+    private String inutilizacao;
+    private String consultaProtocolo;
+    private String statusServico;
     private String tempoMedio;
-    private String consultaCadastro4;
-    private String recepcaoEvento4;
+    private String consultaCadastro;
+    private String recepcaoEvento;
 }
