@@ -1,6 +1,6 @@
 # Nimitz
 
-2- Desenvolva um job que seja executado a cada 5 minutos para armazenar um histórico de status dos serviços.
+2- Desenvolva um job que seja executado a cada 5 minutos para armazenar um histórico de status dos serviços.<br/>
 R: A classe <em>VerifyStatusController</em> é responsável pela execução do <em>job</em>.
 
 3- Retornar por rest os status atual dos serviços por estado.
