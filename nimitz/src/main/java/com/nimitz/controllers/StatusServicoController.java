@@ -58,32 +58,17 @@ public class StatusServicoController {
 	@GetMapping("/data/{data}")
 	public ResponseEntity<List<Optional<StatusServicoModel>>> getStatusServicoForData(
 			@PathVariable(value = "data") String data) {
-			List<Optional<StatusServicoModel>> optionals = statusServicoService.findByDataVerificacao(data);				
-			if (!optionals.isEmpty()) {
-				return ResponseEntity.status(HttpStatus.OK).body(optionals);
-			} else {
-				return ResponseEntity.notFound().build();
-			}
+		List<Optional<StatusServicoModel>> optionals = statusServicoService.findByDataVerificacao(data);
+		if (!optionals.isEmpty()) {
+			return ResponseEntity.status(HttpStatus.OK).body(optionals);
+		} else {
+			return ResponseEntity.notFound().build();
+		}
 
 	}
 
 	@GetMapping("/unavailable")
-	public String moreUnavailableService(){
-		try{
-				var statusServicoModel = new StatusServicoModel();				
-				statusServicoModel.setNomeEstado("diogo");
-                statusServicoModel.setAutorizacao("vermelho");
-                statusServicoModel.setRetornoAutorizacao("vermelho");
-                statusServicoModel.setInutilizacao("vermelho");
-                statusServicoModel.setConsultaProtocolo("vermelho");
-                statusServicoModel.setStatusServico("vermelho");
-                statusServicoModel.setTempoMedio("vermelho");
-                statusServicoModel.setConsultaCadastro("vermelho");
-				statusServicoModel.setRecepcaoEvento("vermelho");
-                statusServicoService.save(statusServicoModel);
-		}catch(Exception e){
-			System.out.println("erro ao gravar");
-		}
-		return "salvei";
+	public String moreUnavailableService() {
+		return "";
 	}
 }
