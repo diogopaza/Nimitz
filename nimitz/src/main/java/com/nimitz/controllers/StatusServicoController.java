@@ -69,6 +69,21 @@ public class StatusServicoController {
 
 	@GetMapping("/unavailable")
 	public String moreUnavailableService(){
-		return "";
+		try{
+				var statusServicoModel = new StatusServicoModel();				
+				statusServicoModel.setNomeEstado("diogo");
+                statusServicoModel.setAutorizacao("vermelho");
+                statusServicoModel.setRetornoAutorizacao("vermelho");
+                statusServicoModel.setInutilizacao("vermelho");
+                statusServicoModel.setConsultaProtocolo("vermelho");
+                statusServicoModel.setStatusServico("vermelho");
+                statusServicoModel.setTempoMedio("vermelho");
+                statusServicoModel.setConsultaCadastro("vermelho");
+				statusServicoModel.setRecepcaoEvento("vermelho");
+                statusServicoService.save(statusServicoModel);
+		}catch(Exception e){
+			System.out.println("erro ao gravar");
+		}
+		return "salvei";
 	}
 }

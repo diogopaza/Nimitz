@@ -8,16 +8,17 @@ import com.nimitz.services.StatusServicoService;
 
 @Component
 @EnableScheduling
-public class VerifiyStatusController {   
+public class VerifiyStatusController {
     private final long TEMPO_EXECUCAO = (5 * (1000 * 60));
-private final StatusServicoService statusServicoService;
+    private final StatusServicoService statusServicoService;
 
-public VerifiyStatusController(StatusServicoService statusServicoService){
-    this.statusServicoService = statusServicoService;}    
+    public VerifiyStatusController(StatusServicoService statusServicoService) {
+        this.statusServicoService = statusServicoService;
+    }
 
     @Scheduled(fixedDelay = TEMPO_EXECUCAO)
-    public void getStatus(){
+    public void getStatus() {
         statusServicoService.saveStatus();
-        System.out.println("gravando");
+        System.out.println("Executando");
     }
 }

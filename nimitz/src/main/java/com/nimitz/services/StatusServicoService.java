@@ -95,5 +95,9 @@ public class StatusServicoService {
     public List<Optional<StatusServicoModel>> findByDataVerificacao(String dataVerificacao){       
        return statusServicoRepository.findByDataVerificacao(dataVerificacao);
     }
+
+    public void save(StatusServicoModel statusServicoModel) {
+        statusServicoRepository.save( statusServicoModel);
+    }
     
 }
