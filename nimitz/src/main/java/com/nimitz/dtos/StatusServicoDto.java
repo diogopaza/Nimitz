@@ -15,4 +15,5 @@ public class StatusServicoDto {
     private String tempoMedio;
     private String consultaCadastro;
     private String recepcaoEvento;
+    private String dataVerificacao;
 }

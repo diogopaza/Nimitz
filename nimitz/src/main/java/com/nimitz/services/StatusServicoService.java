@@ -26,7 +26,6 @@ public class StatusServicoService {
     }
 
     public List<StatusServicoDto> saveStatus() {
-        System.out.println("Service Sr Senior");
         Document document;
         Elements elementsImpar;
         Elements elementsPar;
@@ -85,7 +84,16 @@ public class StatusServicoService {
         return "";
     }
 
-    public List<StatusServicoModel> findByNome(String nomeEstadoAbreviado){
-        return statusServicoRepository.findByNomeEstado(nomeEstadoAbreviado);        
+    public List<Optional<StatusServicoModel>> findByNome(String nomeEstadoAbreviado) {       
+        return statusServicoRepository.findByNomeEstado(nomeEstadoAbreviado);
     }
+
+    public List<StatusServicoModel> findAll(){
+        return statusServicoRepository.findAll();
+    } 
+
+    public List<Optional<StatusServicoModel>> findByDataVerificacao(String dataVerificacao){       
+       return statusServicoRepository.findByDataVerificacao(dataVerificacao);
+    }
+    
 }
