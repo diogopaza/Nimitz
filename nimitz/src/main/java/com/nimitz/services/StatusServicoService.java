@@ -19,7 +19,6 @@ import com.nimitz.repositories.StatusServicoRepository;
 @Service
 public class StatusServicoService {
     private StatusServicoRepository statusServicoRepository;
-    List<StatusServicoDto> listStatusServicoDto = new ArrayList<>();
 
     public StatusServicoService(StatusServicoRepository statusServicoRepository) {
         this.statusServicoRepository = statusServicoRepository;
@@ -29,6 +28,7 @@ public class StatusServicoService {
         Document document;
         Elements elementsImpar;
         Elements elementsPar;
+        List<StatusServicoDto> listStatusServicoDto = new ArrayList<>();
         try {
             document = Jsoup.connect("http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx").get();
             elementsImpar = document.getElementsByClass("linhaImparCentralizada");
@@ -84,20 +84,20 @@ public class StatusServicoService {
         return "";
     }
 
-    public List<Optional<StatusServicoModel>> findByNome(String nomeEstadoAbreviado) {       
+    public List<Optional<StatusServicoModel>> findByNome(String nomeEstadoAbreviado) {
         return statusServicoRepository.findByNomeEstado(nomeEstadoAbreviado);
     }
 
-    public List<StatusServicoModel> findAll(){
+    public List<StatusServicoModel> findAll() {
         return statusServicoRepository.findAll();
-    } 
+    }
 
-    public List<Optional<StatusServicoModel>> findByDataVerificacao(String dataVerificacao){       
-       return statusServicoRepository.findByDataVerificacao(dataVerificacao);
+    public List<Optional<StatusServicoModel>> findByDataVerificacao(String dataVerificacao) {
+        return statusServicoRepository.findByDataVerificacao(dataVerificacao);
     }
 
     public void save(StatusServicoModel statusServicoModel) {
-        statusServicoRepository.save( statusServicoModel);
+        statusServicoRepository.save(statusServicoModel);
     }
-    
+
 }
